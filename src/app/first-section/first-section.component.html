@@ -1,0 +1,43 @@
+<div class="first-section">
+
+    <h1 class="title ">
+        <div class="aurora">
+            <div class="aurora__item"></div>
+            <div class="aurora__item"></div>
+            <div class="aurora__item"></div>
+            <div class="aurora__item"></div>
+        </div>
+        <span class="fade-in">High-End Mobile & Web Development</span>
+    </h1>
+
+    <h5 class="fade-in">
+        Blending user needs with business goals to design and deliver features that drive <span class=" drives">
+            adoption,
+            loyalty, and
+            impact.</span>
+    </h5>
+
+    <div class="buttons">
+        <app-work-with-me></app-work-with-me>
+        <a href="#skills" class="button gray-button">
+            <p> Learn more</p>
+            <i class="fa-solid fa-arrow-down"></i>
+
+        </a>
+    </div>
+    <div class="techs-wrapper">
+        <div class="techs">
+            <div class="tech" *ngFor="let tech of techs">
+                <img [src]="'/assets/svgs/'+tech+'.svg'" [alt]="tech">
+            </div>
+
+        </div>
+        <div class="fade fade-left"></div>
+        <div class="fade fade-right"></div>
+    </div>
+
+
+
+
+
+</div>

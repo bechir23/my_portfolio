@@ -1,0 +1,28 @@
+.try-me-section {
+  width: 100%;
+  padding: 100px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content {
+  width: 100%;
+  background-color: var(--dark-blue);
+  border-radius: 12px;
+  color: var(--white-text);
+  padding: 3vw 0.8vw;
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 5vw;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.content .text {
+  width: 60vw;
+}
+
+.forth-section p {
+  color: var(--light-gray);
+}

@@ -1,0 +1,9 @@
+<div id="projects" class="third-section">
+    <h2>Projects</h2>
+    <div class="projects">
+        <app-folder *ngFor="let project of projects;let index=index; let isOdd = odd;" [project]="project"
+            [index]="index" [mainColor]="project.mainColor" [secondaryColor]="project.secondaryColor"
+            [foregroundColor]="project.foregroundColor"></app-folder>
+    </div>
+
+</div>

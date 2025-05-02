@@ -1,0 +1,64 @@
+<div class="folder-wrapper" [ngStyle]="{'--offset':index*30+'px', '--scale': (1 + index * 0.02)}">
+    <div class="folder-container">
+        <svg class="folder-background" *ngIf="isDesktop" viewBox="0 0 1616 900" preserveAspectRatio="none"
+            aria-hidden="true" [style.fill]="mainColor">
+            <path
+                d="M0 66C0 29.55 29.55 0 66 0H553.59C572.74 0 591.47 6.34 606.89 17.96L678.36 73.09C693.78 84.71 712.51 91.05 731.66 91.05H1550C1586.45 91.05 1616 120.6 1616 157.05V834C1616 870.45 1586.45 900 1550 900H66C29.55 900 0 870.45 0 834V66Z" />
+        </svg>
+        <div class="folder-content-wrapper" [class.mobile-container]="!isDesktop"
+            [ngStyle]="{'background-color': isDesktop?'transparent':mainColor}">
+            <h3 [style.color]="foregroundColor">{{ project.name }}</h3>
+            <h5 [style.color]="secondaryColor">{{ project.role }}</h5>
+
+            <div class="folder-content">
+                <div class="infos">
+                    <!-- Summary -->
+                    <p [style.color]="foregroundColor" style="font-weight: 500;">
+                        {{ project.summary }}
+                    </p>
+
+                    <!-- Tech Stack -->
+                    <p [style.color]="foregroundColor">
+                        <strong>Tech stack:</strong> {{ project.techStack.join(', ') }}
+                    </p>
+
+                    <!-- Key Features -->
+                    <div *ngIf="project.keyFeatures?.length">
+                        <p [style.color]="foregroundColor"><strong>Key Features:</strong></p>
+                        <ul>
+                            <li *ngFor="let feature of project.keyFeatures" [style.color]="foregroundColor">
+                                <p>✅ {{ feature }}</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Responsibilities -->
+                    <!-- <p [style.color]="foregroundColor">
+                        <strong>What I did:</strong> {{ project.responsibilities }}
+                    </p> -->
+
+                    <!-- Impact / Outcome -->
+                    <p *ngIf="project.impact" [style.color]="foregroundColor">
+                        <strong>Outcome:</strong> {{ project.impact }}
+                    </p>
+
+                    <!-- Play Store Link -->
+                    <a *ngIf="project.playstoreLink" target="_blank" class="button"
+                        style="background-color: var(--black-text); color: white;" [href]="project.playstoreLink">
+                        <img src="/assets/images/play-store.png" alt="google-play" />
+                        Get it on Play Store
+                    </a>
+                </div>
+
+                <div class="media">
+                    <app-macframe *ngIf="project.type === 'WEB'" [mediaUrls]="project.mediaUrls"></app-macframe>
+
+                    <app-androidframe *ngIf="project.type === 'MOBILE'" [mediaUrls]="project.mediaUrls"
+                        [frameColor]="foregroundColor" [arrowsColor]="secondaryColor"></app-androidframe>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

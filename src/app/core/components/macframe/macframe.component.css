@@ -1,0 +1,70 @@
+.mac-window {
+  height: 50vh;
+  width: 100%;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ccc;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow: hidden;
+}
+
+.mac-titlebar {
+  height: 10%;
+  background: #f5f5f7;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  border-bottom: 1px solid #ddd;
+  justify-content: space-between;
+}
+
+.mac-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.mac-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.mac-btn.red {
+  background-color: #ff5f57;
+}
+.mac-btn.yellow {
+  background-color: #ffbd2e;
+}
+.mac-btn.green {
+  background-color: #28c840;
+}
+
+.mac-content {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+.mac-content img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.mac-nav-buttons {
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.mac-nav-buttons i {
+  cursor: pointer;
+  padding: 20px;
+}
+@media (max-width: 768px) {
+  .mac-window {
+    width: 100%;
+    height: 50vh;
+    background-color: red;
+  }
+}
