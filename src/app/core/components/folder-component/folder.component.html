@@ -1,4 +1,5 @@
-<div class="folder-wrapper" [ngStyle]="{'--offset':index*30+'px', '--scale': (1 + index * 0.02)}">
+<div class="folder-wrapper"
+    [ngStyle]="{'--offset':isLast?0: index*30+'px', '--scale': (1 + index * 0.02),'position': isLast ? 'relative' : 'sticky'}">
     <div class="folder-container">
         <svg class="folder-background" *ngIf="isDesktop" viewBox="0 0 1616 900" preserveAspectRatio="none"
             aria-hidden="true" [style.fill]="mainColor">

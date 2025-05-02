@@ -10,7 +10,8 @@
   background-color: var(--dark-blue);
   border-radius: 12px;
   color: var(--white-text);
-  padding: 3vw 0.8vw;
+  padding: clamp(0.75rem, 5vw, 7rem) clamp(0.75rem, 7vw, 7rem);
+
   display: flex;
   flex-wrap: wrap;
 
@@ -20,9 +21,14 @@
 }
 
 .content .text {
-  width: 60vw;
+  width: 70%;
 }
 
 .forth-section p {
   color: var(--light-gray);
+}
+@media (max-width: 768px) {
+  .content .text {
+    width: 100%;
+  }
 }

@@ -48,7 +48,10 @@
 }
 
 .status-icons {
+  width: 100%;
   user-select: none;
+  display: flex;
+  flex-wrap: nowrap;
 }
 
 .android-content {

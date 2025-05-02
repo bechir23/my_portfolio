@@ -10,7 +10,7 @@
 .folder-container {
   position: relative;
   width: 100%;
-  /* padding: 6% 0 0; */
+  padding: 6% 0 0;
   height: 100%;
 
   .folder-background {
@@ -39,6 +39,7 @@
   display: flex;
   gap: 10px;
   align-items: center;
+  padding-bottom: 30px;
 }
 .folder-content .infos {
   display: flex;
@@ -84,12 +85,13 @@
   /* Apply the rounded container styles on mobile */
   .folder-container {
     border-radius: 15px; /* Make it more rounded on mobile */
-    padding: 0 15px;
+    padding: 15px;
   }
 
   .folder-content {
     display: flex;
     flex-direction: column;
+    padding-bottom: 50px;
   }
   .folder-content .infos {
     display: flex;
