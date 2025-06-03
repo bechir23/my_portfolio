@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" width="200" height="80">
+  <defs>
+    <linearGradient id="headerGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f59e42;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- BBT Text with Gradient -->
+  <text x="20" y="55" font-family="Inter, Arial, sans-serif" font-size="48" font-weight="800" fill="url(#headerGradient)">
+    BBT
+  </text>
+  
+  <!-- Accent Dot -->
+  <circle cx="140" cy="50" r="4" fill="#f59e42"/>
+  
+  <!-- Subtitle -->
+  <text x="20" y="70" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="400" fill="#64748b">
+    Data Science Engineer
+  </text>
+</svg>
