@@ -1,10 +1,104 @@
-<div id="projects" class="third-section">
-    <h2>Projects</h2>
-    <div class="projects">
-        <app-folder *ngFor="let project of projects;let index=index; let isOdd = odd;let isLast = last"
-            [project]="project" [index]="index" [mainColor]="project.mainColor"
-            [secondaryColor]="project.secondaryColor" [foregroundColor]="project.foregroundColor"
-            [isLast]="isLast"></app-folder>
-    </div>
+<section class="projects-section" id="research">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Research Projects</h2>
+      <div class="section-subtitle">Research & Technical Development</div>
+      <div class="section-divider"></div>
+    </div>    <div class="filter-tabs">
+      <button class="filter-btn active" data-filter="all" (click)="filterProjects('all')">All</button>
+      <button class="filter-btn" data-filter="computer-vision" (click)="filterProjects('computer-vision')">Computer Vision</button>
+      <button class="filter-btn" data-filter="audio" (click)="filterProjects('audio')">Audio Processing</button>
+    </div><div class="projects-grid">      <!-- Invasive Species Detection Project -->
+      <div class="project-card" data-category="computer-vision">
+        <div class="project-header">
+          <div class="project-institution">Southern Denmark University</div>
+          <div class="project-date">Accepted for KES-2025</div>
+        </div>
+        <h3 class="project-title">Computer Vision for Invasive Species Detection</h3>
+        <p class="project-description">
+          Developed a deep learning framework for automated detection and classification of invasive plant species using 
+          UAV-captured imagery. Integrated YOLOv9 architecture with attention mechanisms and spatial-temporal features 
+          for improved detection accuracy in natural environments.
+        </p>
+        <div class="project-tech">
+          <span class="tech-tag">Computer Vision</span>
+          <span class="tech-tag">YOLOv9</span>
+          <span class="tech-tag">UAV Imagery</span>
+          <span class="tech-tag">Conservation</span>
+          <span class="tech-tag">PyTorch</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link"><i class="fas fa-file-alt"></i> Publication</a>
+        </div>
+      </div>
 
-</div>
+      <!-- Audio Classification Project -->
+      <div class="project-card" data-category="audio">
+        <div class="project-header">
+          <div class="project-institution">Southern Denmark University, Denmark</div>
+          <div class="project-date">February 2025</div>
+        </div>
+        <h3 class="project-title">Audio Classification for Medical ICBHI Dataset</h3>
+        <p class="project-description">
+          Developed an end-to-end pipeline for respiratory sound classification by extracting spectrogram features 
+          with Librosa and TorchVision, implementing advanced loss strategies and SwAV contrastive learning with 
+          progressive weight adjustments.
+        </p>
+        <div class="project-tech">
+          <span class="tech-tag">PyTorch</span>
+          <span class="tech-tag">SwAV</span>
+          <span class="tech-tag">Librosa</span>
+          <span class="tech-tag">TorchVision</span>
+          <span class="tech-tag">Medical AI</span>
+        </div>        <div class="project-links">
+          <a href="#" class="project-link"><i class="fas fa-file-alt"></i> Publication</a>
+        </div>
+      </div>
+
+      <!-- Remote Sensing Project -->
+      <div class="project-card" data-category="computer-vision">
+        <div class="project-header">
+          <div class="project-institution">Independent Research</div>
+          <div class="project-date">December 2024</div>
+        </div>
+        <h3 class="project-title">Remote Sensing Image Segmentation</h3>
+        <p class="project-description">
+          Designed a semi-supervised segmentation framework for remote sensing imagery with sparse annotations, 
+          integrating ensemble learning to combine multiple deep learning models and developing a specialized 
+          partial cross entropy loss function.
+        </p>
+        <div class="project-tech">
+          <span class="tech-tag">Computer Vision</span>
+          <span class="tech-tag">Segmentation</span>
+          <span class="tech-tag">Ensemble Learning</span>
+          <span class="tech-tag">Semi-supervised Learning</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="project-link"><i class="fas fa-code"></i> View Code</a>
+          <a href="#" class="project-link"><i class="fas fa-file-alt"></i> Publication</a>
+        </div>
+      </div>      <!-- Photovoltaic Project -->
+      <div class="project-card" data-category="computer-vision">
+        <div class="project-header">
+          <div class="project-institution">Southern Denmark University, Denmark</div>
+          <div class="project-date">June 2024 - Accepted DEXA 2025</div>
+        </div>
+        <h3 class="project-title">Photovoltaic Anomaly Detection</h3>
+        <p class="project-description">
+          Engineered a custom deep CNN architecture with attention mechanisms for anomaly detection in photovoltaic panels, 
+          optimized with quantization techniques for NVIDIA Jetson edge deployment using DeepStream and Triton Inference Server.
+          Research accepted for publication at DEXA 2025 conference.
+        </p>
+        <div class="project-tech">
+          <span class="tech-tag">CNN</span>
+          <span class="tech-tag">TensorRT</span>
+          <span class="tech-tag">NVIDIA DeepStream</span>
+          <span class="tech-tag">Edge AI</span>
+          <span class="tech-tag">Triton</span>
+        </div>        <div class="project-links">
+          <a href="#" class="project-link"><i class="fas fa-file-alt"></i> Publication</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,32 +1,53 @@
-import { AfterViewInit, Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { NavbarComponent } from './shared/components/navbar/navbar.component';
-import { CursorEffectDirective } from './core/directives/cursor-effect.directive';
+import { Component, HostListener } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FirstSectionComponent } from './first-section/first-section.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { SecondSectionComponent } from './second-section/second-section.component';
+import { SkillsSectionComponent } from './skills-section/skills-section.component';
 import { ThirdSectionComponent } from './third-section/third-section.component';
 import { ForthSectionComponent } from './forth-section/forth-section.component';
 import { FifthSectionComponent } from './fifth-section/fifth-section.component';
-import { FooterComponent } from './core/components/footer/footer.component';
-interface CustomHTMLDivElement extends HTMLDivElement {
-  x: number;
-  y: number;
-}
+
 @Component({
   selector: 'app-root',
-  imports: [
-    RouterOutlet,
-    NavbarComponent,
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+  standalone: true,  imports: [
+    CommonModule,
     FirstSectionComponent,
-    SecondSectionComponent,
+    SkillsSectionComponent,
     ThirdSectionComponent,
     ForthSectionComponent,
     FifthSectionComponent,
-    FooterComponent,
-    CursorEffectDirective,
-  ],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+  ]
 })
-export class AppComponent {}
+export class AppComponent {
+  title = 'portfolio-app';
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const header = document.querySelector('.main-header') as HTMLElement;
+    const scrollPosition = window.scrollY;
+    
+    if (scrollPosition > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+    
+    // Update active nav link based on scroll position
+    const sections = document.querySelectorAll('section[id]');
+    sections.forEach(section => {
+      const sectionTop = (section as HTMLElement).offsetTop - 100;
+      const sectionHeight = (section as HTMLElement).offsetHeight;
+      const sectionId = section.getAttribute('id');
+      
+      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+        document.querySelectorAll('.nav-link').forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${sectionId}`) {
+            link.classList.add('active');
+          }
+        });
+      }
+    });
+  }
+}

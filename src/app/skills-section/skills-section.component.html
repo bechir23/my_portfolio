@@ -1,0 +1,37 @@
+<section class="skills-section" id="skills">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Skills & Expertise</h2>
+      <div class="section-subtitle">Technical Proficiencies & Specializations</div>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-category" *ngFor="let category of skillCategories">
+        <div class="category-header" [style.background]="category.color">
+          <i [class]="category.icon"></i>
+          <h3>{{ category.title }}</h3>
+        </div>
+        <div class="skills-list">
+          <span class="skill-tag" *ngFor="let skill of category.skills" [style.border-color]="category.color">
+            {{ skill }}
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="skills-highlight">
+      <div class="highlight-item">
+        <div class="highlight-number">5+</div>
+        <div class="highlight-text">Years Experience</div>
+      </div>      <div class="highlight-item">
+        <div class="highlight-number">3+</div>
+        <div class="highlight-text">Research Projects</div>
+      </div>
+      <div class="highlight-item">
+        <div class="highlight-number">2</div>
+        <div class="highlight-text">Conference Papers</div>
+      </div>
+    </div>
+  </div>
+</section>
